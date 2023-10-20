@@ -1,4 +1,4 @@
-# max78_jupyter_training
+# MAX7800x jupyter training
 **Train max7800x from Jupyter**  
 The [ai8x-training](https://github.com/MaximIntegratedAI/ai8x-training/tree/pytorch-2.0) is not required!  
 Make sure to be on linux!  
