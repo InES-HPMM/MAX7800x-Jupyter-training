@@ -33,3 +33,7 @@ pip install -r requirements-cu11.txt
 
 - Everything should be ready to go! Open the notebook: `train_MNIST.ipynb`
 
+## Summary
+- This repo is a fork of the ai8x-training and its purpose is to train the MAX78002 from Jupyter notebook. Instead of using MAX78 training tool.
+A picture of QA-training from Jupyter notebook with the distiller:
+![QAT max78 notebook](/assets/qat_training.png)
