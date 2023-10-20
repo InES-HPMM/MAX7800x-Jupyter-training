@@ -1,9 +1,16 @@
 # max78_jupyter_training
 **Train max7800x from Jupyter**  
+The [ai8x-training](https://github.com/MaximIntegratedAI/ai8x-training/tree/pytorch-2.0) is not required!  
 Make sure to be on linux!  
 Only tested with Nvidia GPUs  
 Python 3.8  
 Pytorch 2.0.1
+
+## What is included
+- MNIST classifier for the MAX78
+- QAT (Quantization Aware Training)
+- Export KAT
+- Export QAT model (.pth.tar), compatible with the [synthesis tool](https://github.com/MaximIntegratedAI/ai8x-synthesis/tree/pytorch-2.0)
 
 ## Setup
 - Setup anaconda: https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html  
@@ -24,5 +31,5 @@ git submodule update --init --recursive
 pip install -r requirements-cu11.txt
 ```
 
-- Everything should be ready to go! Open the notebook: train_MNIST.ipynb
+- Everything should be ready to go! Open the notebook: `train_MNIST.ipynb`
 
