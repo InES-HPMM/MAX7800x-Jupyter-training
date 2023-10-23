@@ -16,7 +16,7 @@ I aim to empower you with the knowledge of how to train the MAX78000 and MAX7800
 ## Network Training Completed, What's Next?
 It's important to note that this tutorial doesn't substitute the conventional method of synthesizing the network. You'll still need the official tool [ai8x-synthesis](https://github.com/MaximIntegratedAI/ai8x-synthesis/tree/pytorch-2.0) for this critical step.  
 
-The key distinction here is that you now have the flexibility to train your network directly from your Jupyter notebook, bypassing the need to rely on the MAX78 training tool. To see a practical example of the entire process, from training to synthesis, check out the **"How to Use"** chapter.
+The key distinction here is that you now have the flexibility to train your network directly from your Jupyter notebook, bypassing the need to rely on the MAX78 training tool. To see a practical example of the entire process, from training to synthesis, check out the **"How to Get Started"** chapter.
 
 ## What is included
 - MNIST classifier for the MAX78
@@ -59,5 +59,24 @@ pip install -r requirements-cu11.txt
 
 - Everything should be ready to go! Open the notebook: `train_MNIST.ipynb`
 
-## How to Use
+## How to Get Started
+
+Before diving in, make sure you've completed the setup!
+
+### Training the Network
+To train the network, follow these steps:
+- Make sure to open the `train_MNIST.ipynb` notebook
+- Execute the notebook cells in sequential order.
+- The notebook will download the MNIST dataset, train the network, and export the KAT and the QAT model.
+- The QAT model should have an accuracy of ~99% on the test set
+
+Take a look at the image below to get a visual idea of what to expect during QAT training:
+![QAT max78 notebook](/assets/qat_training.png)
+
+Finally, confirm that the following files have been generated in the `max78_jupyter_training` directory:
+- `sample_mnist_2828.npy`
+- `qat_class_mnist_checkpoint.pth.tar`
+
+### Synthesizing the Network
 - TODO
+
