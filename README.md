@@ -91,7 +91,8 @@ Finally, confirm that the following files have been generated in the `max78_jupy
 - Copy the `qat_class_mnist_checkpoint.pth.tar` file to the `custom-mnist` directory
 - Quantize the network: `python quantize.py custom-mnist/qat_class_mnist_checkpoint.pth.tar custom-mnist/qat_class_mnist_checkpoint_q8.pth.tar --device MAX78002 -v`
 #### Populate the network descriptor file
-- Create `custom-mnist/classifier.yaml` and insert:
+- Create `custom-mnist/classifier.yaml` and insert:  
+(make sure to not forget the **empty line at the end of the file**)
 ```
 ---
 # HWC (little data) configuration for parking
