@@ -21,7 +21,7 @@ The key distinction here is that you now have the flexibility to train your netw
 ## What is included
 - MNIST classifier for the MAX78
 - QAT (Quantization Aware Training)
-- Export KAT
+- Export KAT (known-answer test)
 - Export QAT model (.pth.tar), compatible with the [synthesis tool](https://github.com/MaximIntegratedAI/ai8x-synthesis/tree/pytorch-2.0)
 - Directory structure:
 
