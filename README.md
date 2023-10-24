@@ -6,27 +6,24 @@ Please ensure you are using a Linux environment, as this guide is tailored for L
 - Python 3.8
 - PyTorch 2.0.1
 
-Let's dive into the world of training MAX7800x, right from the comfort of your Jupyter notebook.
-
-# About
-For the past several months, I've been deep in the trenches with the [ai8x-training](https://github.com/MaximIntegratedAI/ai8x-training/tree/pytorch-2.0) tool, honing my skills in training various Convolutional Neural Network (CNN) architectures specifically tailored for the MAX78000 and MAX78002 devices. Yet, from the outset, this tool often felt more like a roadblock than an enabler.  
-
-Among the myriad challenges I encountered, the inability to make real-time adjustments, fine-tune models while freezing or unfreezing specific layers, and transferring custom weight sets proved to be major pain points. These limitations stifled the efficiency and flexibility I needed.  
-
-I aim to empower you with the knowledge of how to train the MAX78000 and MAX78002 devices right from your Jupyter notebook. With this approach, you'll break free from the shackles of real-time debugging and fine-tuning woes, ensuring seamless interaction with your neural networks. Let's dive into the nitty-gritty of this process and unlock the full potential of these devices.
-
-## Network Training Completed, What's Next?
-It's important to note that this tutorial doesn't substitute the conventional method of synthesizing the network. You'll still need the official tool [ai8x-synthesis](https://github.com/MaximIntegratedAI/ai8x-synthesis/tree/pytorch-2.0) for this critical step.  
+It's important to note that this tutorial doesn't substitute the conventional method of synthesizing the network. You'll still need the official tool [ai8x-synthesis](https://github.com/MaximIntegratedAI/ai8x-synthesis/tree/pytorch-2.0) for this critical step.
 
 The key distinction here is that you now have the flexibility to train your network directly from your Jupyter notebook, bypassing the need to rely on the MAX78 training tool. To see a practical example of the entire process, from training to synthesis, check out the **"How to Get Started"** chapter.
+
+# About
+For the past several months, I've been deep in the trenches with the [ai8x-training](https://github.com/MaximIntegratedAI/ai8x-training/tree/pytorch-2.0) tool, honing my skills in training various Convolutional Neural Network (CNN) architectures specifically tailored for the MAX78000 and MAX78002 devices. Yet, from the outset, the [ai8x-training](https://github.com/MaximIntegratedAI/ai8x-training/tree/pytorch-2.0) tool often felt more like a roadblock than an enabler.
+
+Among the myriad challenges I encountered, the inability to make real-time adjustments, fine-tune models while freezing or unfreezing specific layers, and transferring custom weight sets proved to be major pain points. These limitations stifled the efficiency and flexibility I needed.
+
+I aim to empower you with the knowledge of how to train the MAX78000 and MAX78002 devices right from your Jupyter notebook. With this approach, you'll break free from the shackles of real-time debugging and fine-tuning woes, ensuring seamless interaction with your neural networks. Let's dive into the nitty-gritty of this process and unlock the full potential of these devices.
 
 ## What is included
 - MNIST classifier for the MAX78
 - QAT (Quantization Aware Training)
 - Export KAT (known-answer test)
 - Export QAT model (.pth.tar), compatible with the [synthesis tool](https://github.com/MaximIntegratedAI/ai8x-synthesis/tree/pytorch-2.0)
-- Directory structure:
 
+## Directory structure:
 ```
 .
 ├── README.md
@@ -40,9 +37,12 @@ The key distinction here is that you now have the flexibility to train your netw
 └── train_MNIST.ipynb   <-- example Jupyter notebook
 ```
 
-## Setup
-- Setup anaconda: https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html  
-- Create the environment and activate it:
+## Get Started
+Let's dive into the world of training the MAX7800x, right from the comfort of your Jupyter notebook.
+
+### Setup
+- Install anaconda: https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html
+- Create an environment and activate it:
 ```
 conda create -n max78-training-jupyter python=3.8
 conda activate max78-training-jupyter
@@ -54,20 +54,18 @@ git clone https://github.com/isztldav/max78_jupyter_training.git
 git submodule update --init --recursive
 ```
 
-- Install requirements
+- Install the Python requirements
 ```
 pip install -r requirements-cu11.txt
 ```
 
 - Everything should be ready to go! Open the notebook: `train_MNIST.ipynb`
-
-## How to Get Started
-
-Before diving in, make sure you've completed the setup!
+```
+notebook train_MNIST.ipynb
+```
 
 ### Training the Network
-To train the network, follow these steps:
-- Make sure to open the `train_MNIST.ipynb` notebook
+To train the network, follow these steps within the `train_MNIST.ipynb` notebook:
 - Execute the notebook cells in sequential order.
 - The notebook will download the MNIST dataset, train the network, and export the KAT and the QAT model.
 - The QAT model should have an accuracy of ~99% on the test set
@@ -82,7 +80,7 @@ Finally, confirm that the following files have been generated in the `max78_jupy
 ### Synthesizing the Network
 - **IMPORTANT**: It's crucial to ensure that you have a functional installation of the [ai8x-synthesis](https://github.com/MaximIntegratedAI/ai8x-synthesis/tree/pytorch-2.0) tool. If you haven't done so yet, please refer to the official GitHub repository and follow the provided instructions for installation.
 
-- **Note**: The following steps are not unique but are standard for synthesizing any trained network using the ai8x-synthesis tool.
+- **Note**: The following steps are not unique, but are standard for synthesizing any trained network using the ai8x-synthesis tool.
 
 #### Prepare the KAT
 - Copy the `sample_mnist_2828.npy` file to the `ai8x-synthesis/tests` directory
@@ -91,7 +89,7 @@ Finally, confirm that the following files have been generated in the `max78_jupy
 - Copy the `qat_class_mnist_checkpoint.pth.tar` file to the `custom-mnist` directory
 - Quantize the network: `python quantize.py custom-mnist/qat_class_mnist_checkpoint.pth.tar custom-mnist/qat_class_mnist_checkpoint_q8.pth.tar --device MAX78002 -v`
 #### Populate the network descriptor file
-- Create `custom-mnist/classifier.yaml` and insert:  
+- Create `custom-mnist/classifier.yaml` and insert:
 (make sure to not forget the **empty line at the end of the file**)
 ```
 ---
@@ -158,6 +156,8 @@ layers:
 ```
 
 #### Synthesize the network, as you would normally do:
--  `python ai8xize.py --test-dir CNN_example --prefix ai87net-mnist-classifier --checkpoint-file custom-mnist/qat_class_mnist_checkpoint_q8.pth.tar --config-file custom-mnist/classifier.yaml --device MAX78002 --timer 0 --display-checkpoint --verbose --softmax`
+```
+python ai8xize.py --test-dir CNN_example --prefix ai87net-mnist-classifier --checkpoint-file custom-mnist/qat_class_mnist_checkpoint_q8.pth.tar --config-file custom-mnist/classifier.yaml --device MAX78002 --timer 0 --display-checkpoint --verbose --softmax
+```
 
 Lastly, within the `CNN_example/ai87net-mnist-classifier` directory, you should find the generated CNN files.
