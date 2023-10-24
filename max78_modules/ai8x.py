@@ -17,7 +17,7 @@ import torch
 from torch import nn
 from torch.autograd import Function
 
-import devices
+import max78_modules.devices as devices
 
 dev = None
 
