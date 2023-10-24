@@ -50,8 +50,7 @@ conda activate max78-training-jupyter
 
 - Clone the repo and checkout the submodules
 ```
-git clone https://github.com/isztldav/max78_jupyter_training.git
-git submodule update --init --recursive
+git clone --recurse-submodules https://github.com/isztldav/max78_jupyter_training.git
 ```
 
 - Install the Python requirements
