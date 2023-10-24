@@ -92,7 +92,7 @@ Finally, confirm that the following files have been generated in the `max78_jupy
 (make sure to not forget the **empty line at the end of the file**)
 ```
 ---
-# HWC (little data) configuration for parking
+# HWC (little data) configuration for MNIST
 # MNIST classifier Model
 # Compatible with MAX78002
 
