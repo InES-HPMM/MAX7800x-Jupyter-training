@@ -1,4 +1,11 @@
 # MAX7800x jupyter training
+# About
+For the past several months, I've been deep in the trenches with the [ai8x-training](https://github.com/MaximIntegratedAI/ai8x-training/tree/pytorch-2.0) tool, honing my skills in training various Convolutional Neural Network (CNN) architectures specifically tailored for the MAX78000 and MAX78002 devices. Yet, from the outset, the [ai8x-training](https://github.com/MaximIntegratedAI/ai8x-training/tree/pytorch-2.0) tool often felt more like a roadblock than an enabler.
+
+Among the myriad challenges I encountered, the inability to make real-time adjustments, fine-tune models while freezing or unfreezing specific layers, and transferring custom weight sets proved to be major pain points. These limitations stifled the efficiency and flexibility I needed.
+
+I aim to empower you with the knowledge of how to train the MAX78000 and MAX78002 devices right from your Jupyter notebook. With this approach, you'll break free from the shackles of real-time debugging and fine-tuning woes, ensuring seamless interaction with your neural networks. Let's dive into the nitty-gritty of this process and unlock the full potential of these devices.  
+
 In this guide, we'll walk you through **training MAX7800x directly from a Jupyter notebook**. The best part? You won't need the [ai8x-training](https://github.com/MaximIntegratedAI/ai8x-training/tree/pytorch-2.0) tool for this process.
 
 Please ensure you are using a Linux environment, as this guide is tailored for Linux users. Additionally, this method has been tested exclusively with Nvidia GPUs. Make sure you have the following prerequisites in place:
@@ -8,14 +15,7 @@ Please ensure you are using a Linux environment, as this guide is tailored for L
 
 It's important to note that this tutorial doesn't substitute the conventional method of synthesizing the network. You'll still need the official tool [ai8x-synthesis](https://github.com/MaximIntegratedAI/ai8x-synthesis/tree/pytorch-2.0) for this critical step.
 
-The key distinction here is that you now have the flexibility to train your network directly from your Jupyter notebook, bypassing the need to rely on the MAX78 training tool. To see a practical example of the entire process, from training to synthesis, check out the **"How to Get Started"** chapter.
-
-# About
-For the past several months, I've been deep in the trenches with the [ai8x-training](https://github.com/MaximIntegratedAI/ai8x-training/tree/pytorch-2.0) tool, honing my skills in training various Convolutional Neural Network (CNN) architectures specifically tailored for the MAX78000 and MAX78002 devices. Yet, from the outset, the [ai8x-training](https://github.com/MaximIntegratedAI/ai8x-training/tree/pytorch-2.0) tool often felt more like a roadblock than an enabler.
-
-Among the myriad challenges I encountered, the inability to make real-time adjustments, fine-tune models while freezing or unfreezing specific layers, and transferring custom weight sets proved to be major pain points. These limitations stifled the efficiency and flexibility I needed.
-
-I aim to empower you with the knowledge of how to train the MAX78000 and MAX78002 devices right from your Jupyter notebook. With this approach, you'll break free from the shackles of real-time debugging and fine-tuning woes, ensuring seamless interaction with your neural networks. Let's dive into the nitty-gritty of this process and unlock the full potential of these devices.
+The key distinction here is that you now have the flexibility to train your network directly from your Jupyter notebook, bypassing the need to rely on the MAX78 training tool. To see a practical example of the entire process, from training to synthesis, check out the **"How to get started"** chapter.
 
 ## What is included
 - MNIST classifier for the MAX78
@@ -37,7 +37,7 @@ I aim to empower you with the knowledge of how to train the MAX78000 and MAX7800
 └── train_MNIST.ipynb   <-- example Jupyter notebook
 ```
 
-## Get Started
+## How to get started
 Let's dive into the world of training the MAX7800x, right from the comfort of your Jupyter notebook.
 
 ### Setup
