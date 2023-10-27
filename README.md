@@ -59,9 +59,6 @@ pip install -r requirements-cu11.txt
 ```
 
 - Everything should be ready to go! Open the notebook: `train_MNIST.ipynb`
-```
-notebook train_MNIST.ipynb
-```
 
 ### Training the Network
 To train the network, follow these steps within the `train_MNIST.ipynb` notebook:
