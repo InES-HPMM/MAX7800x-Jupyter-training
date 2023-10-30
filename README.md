@@ -1,4 +1,5 @@
 # MAX7800x jupyter training
+![ZHAW INES](/assets/zhaw-ines-rgb.png)
 # About
 For the past several months, I've been deep in the trenches with the [ai8x-training](https://github.com/MaximIntegratedAI/ai8x-training/tree/pytorch-2.0) tool, honing my skills in training various Convolutional Neural Network (CNN) architectures specifically tailored for the MAX78000 and MAX78002 devices. Yet, from the outset, the [ai8x-training](https://github.com/MaximIntegratedAI/ai8x-training/tree/pytorch-2.0) tool often felt more like a roadblock than an enabler.
 
