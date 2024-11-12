@@ -1,20 +1,20 @@
 # MAX7800x jupyter training
 ![ZHAW INES](/assets/zhaw-ines-rgb.png)
 # About
-For the past several months, I've been deep in the trenches with the [ai8x-training](https://github.com/MaximIntegratedAI/ai8x-training/tree/pytorch-2.0) tool, honing my skills in training various Convolutional Neural Network (CNN) architectures specifically tailored for the MAX78000 and MAX78002 devices. Yet, from the outset, the [ai8x-training](https://github.com/MaximIntegratedAI/ai8x-training/tree/pytorch-2.0) tool often felt more like a roadblock than an enabler.
+For the past several months, I've been deep in the trenches with the [ai8x-training](https://github.com/analogdevicesinc/ai8x-training) tool, honing my skills in training various Convolutional Neural Network (CNN) architectures specifically tailored for the MAX78000 and MAX78002 devices. Yet, from the outset, the [ai8x-training](https://github.com/analogdevicesinc/ai8x-training) tool often felt more like a roadblock than an enabler.
 
 Among the myriad challenges I encountered, the inability to make real-time adjustments, fine-tune models while freezing or unfreezing specific layers, and transferring custom weight sets proved to be major pain points. These limitations stifled the efficiency and flexibility I needed.
 
 I aim to empower you with the knowledge of how to train the MAX78000 and MAX78002 devices right from your Jupyter notebook. With this approach, you'll break free from the shackles of real-time debugging and fine-tuning woes, ensuring seamless interaction with your neural networks. Let's dive into the nitty-gritty of this process and unlock the full potential of these devices.  
 
-In this guide, we'll walk you through **training MAX7800x directly from a Jupyter notebook**. The best part? You won't need the [ai8x-training](https://github.com/MaximIntegratedAI/ai8x-training/tree/pytorch-2.0) tool for this process.
+In this guide, we'll walk you through **training MAX7800x directly from a Jupyter notebook**. The best part? You won't need the [ai8x-training](https://github.com/analogdevicesinc/ai8x-training) tool for this process.
 
 Please ensure you are using a Linux environment, as this guide is tailored for Linux users. Additionally, this method has been tested exclusively with Nvidia GPUs. Make sure you have the following prerequisites in place:
 
 - Python 3.8
 - PyTorch 2.0.1
 
-It's important to note that this tutorial doesn't substitute the conventional method of synthesizing the network. You'll still need the official tool [ai8x-synthesis](https://github.com/MaximIntegratedAI/ai8x-synthesis/tree/pytorch-2.0) for this critical step.
+It's important to note that this tutorial doesn't substitute the conventional method of synthesizing the network. You'll still need the official tool [ai8x-synthesis](https://github.com/analogdevicesinc/ai8x-training) for this critical step.
 
 The key distinction here is that you now have the flexibility to train your network directly from your Jupyter notebook, bypassing the need to rely on the MAX78 training tool. To see a practical example of the entire process, from training to synthesis, check out the **"How to get started"** chapter.
 
@@ -22,7 +22,7 @@ The key distinction here is that you now have the flexibility to train your netw
 - MNIST classifier for the MAX78
 - QAT (Quantization Aware Training)
 - Export KAT (known-answer test)
-- Export QAT model (.pth.tar), compatible with the [synthesis tool](https://github.com/MaximIntegratedAI/ai8x-synthesis/tree/pytorch-2.0)
+- Export QAT model (.pth.tar), compatible with the [synthesis tool](https://github.com/analogdevicesinc/ai8x-training)
 
 ## Directory structure:
 ```
@@ -75,7 +75,7 @@ Finally, confirm that the following files have been generated in the `max78_jupy
 - `qat_class_mnist_checkpoint.pth.tar`
 
 ### Synthesizing the Network
-- **IMPORTANT**: It's crucial to ensure that you have a functional installation of the [ai8x-synthesis](https://github.com/MaximIntegratedAI/ai8x-synthesis/tree/pytorch-2.0) tool. If you haven't done so yet, please refer to the official GitHub repository and follow the provided instructions for installation.
+- **IMPORTANT**: It's crucial to ensure that you have a functional installation of the [ai8x-synthesis](https://github.com/analogdevicesinc/ai8x-training) tool. If you haven't done so yet, please refer to the official GitHub repository and follow the provided instructions for installation.
 
 - **Note**: The following steps are not unique, but are standard for synthesizing any trained network using the ai8x-synthesis tool.
 
