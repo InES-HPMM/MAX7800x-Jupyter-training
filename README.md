@@ -51,7 +51,7 @@ conda activate max78-training-jupyter
 
 - Clone the repo and checkout the submodules
 ```
-git clone --recurse-submodules https://github.com/InES-HPMM/max78_jupyter_training.git
+git clone --recurse-submodules https://github.com/InES-HPMM/MAX7800x-Jupyter-training
 ```
 
 - Install the Python requirements
